@@ -36,42 +36,51 @@ function generatePassword() {
     //ask if you want to use upper or lower case or special characters or numbers and stores in coresponding variable
     //Then concat corespoinding array to password array.
   capitalChoice =confirm("Do you want to use uppercase letters? ( click 'Ok' for yes, 'Cancel' for no)");
-    if(capitalChoice === true){
-      passArray.concat(capitalArray)
+    if(capitalChoice == true){
+      passArray = passArray.concat(capitalArray);
     }
   lowerChoice = confirm("Do you want to use lower case letters? (click 'Ok' for yes, 'Cancel' for no)");
-    if(lowerChoice === true){
-      passArray.concat(lowerArray)
+    if(lowerChoice == true){
+      passArray = passArray.concat(lowerArray);
     }
   specialChoice = confirm("Do you want to use special characters? (click 'Ok' for yes, 'Cancel' for no)");
-    if(specialChoice === true){
-      passArray.concat(specialArray);
+    if(specialChoice ===true){
+      passArray = passArray.concat(specialArray);
     }
   numberChoice = confirm("Do you want to use numbers? (click 'Ok' for yes, 'Cancel' for no)");
-    if(numberChoice === true){
-      passArray.concat(numberArray);
+    if(numberChoice == true){
+      passArray = passArray.concat(numberArray);
     }
   //check if at least one selection was made. if not, tell to try again
+  console.log("here55")
     if((capitalChoice && lowerChoice && specialChoice && numberChoice) === !true){
       alert("You must pick at least one character type. Try again.");
       return;
     }
+    
+    console.log("here60")
   //define new function to create password string from array. This will alow repeating of followeing steps
   //if password criteria final check is unsat.
-  function passwordGenerator (){
+  function passwordGenerator() {
   //splice a randmom selection from password array to final array so password is correct number of characters
     var finalArray = [];
-    while(finalArray.length < numberCHaracters){
-      pChar = passArrayArray[Math.floor(Math.random())];
+      console.log("here66")
+    while(finalArray.length < numberCharacters){
+      pChar = passArray[Math.floor(Math.random())];
+      console.log(pChar)
       finalArray.push(pChar);
     }
+    for(let i = 0; i < finalArray.length; i++){
+      console.log(finalArray[i]);}
+    var pass = finalArray.join('');
+    return pass;
   }
-      
-  console.log()
+  passwordGenerator();
+  
   //check if password contains at least one character from each desired category
 
 
-return;
+
 
 }
 
