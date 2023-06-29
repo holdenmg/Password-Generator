@@ -52,26 +52,24 @@ function generatePassword() {
       passArray = passArray.concat(numberArray);
     }
   //check if at least one selection was made. if not, tell to try again
-  console.log("here55")
+
     if((capitalChoice && lowerChoice && specialChoice && numberChoice) === !true){
       alert("You must pick at least one character type. Try again.");
       return;
     }
     
-    console.log("here60")
+    
   //define new function to create password string from array. This will alow repeating of followeing steps
   //if password criteria final check is unsat.
   function passwordGenerator() {
   //splice a randmom selection from password array to final array so password is correct number of characters
     var finalArray = [];
-      console.log("here66")
-    while(finalArray.length < numberCharacters){
-      pChar = passArray[Math.floor(Math.random())];
+     
+    while(finalArray.length < +numberCharacters){
+      pChar = passArray[Math.floor(Math.random()*passArray.length)];
       console.log(pChar)
       finalArray.push(pChar);
     }
-    for(let i = 0; i < finalArray.length; i++){
-      console.log(finalArray[i]);}
     var pass = finalArray.join('');
     return pass;
   }
