@@ -3,10 +3,10 @@ var generateBtn = document.querySelector("#generate");
 
 //Arrays used to store possible password characters
 
-var lowerArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"," m", "n", "o", "p", "q" , "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var capitalArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var numberArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-var specialArray = [ "!", "#", "$", "%", "&","*","+","-","/",":",";","<","=",">","?","@","[","]","^","~"]
+const lowerArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"," m", "n", "o", "p", "q" , "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const capitalArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+const numberArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+const specialArray = [ "!", "#", "$", "%", "&","*","+","-","/",":",";","<","=",">","?","@","[","]","^","~"]
 
 function generatePassword() {
   // empty password array to contain future choice
@@ -63,46 +63,47 @@ function generatePassword() {
   //if password criteria final check is unsat.
   function passwordGenerator() {
   //splice a randmom selection from password array to final array so password is correct number of characters
-    var finalArray = [];
+    const finalArray = [];
      
     while(finalArray.length < +numberCharacters){
       pChar = passArray[Math.floor(Math.random()*passArray.length)];
       console.log(pChar)
       finalArray.push(pChar);
     }
-    var pass = finalArray.join('');
+    const pass = finalArray.join('');
+    console.log(/[A-Z]/.test(pass));
     //check if password contains at least one character from each desired category, if not run passwordGenerator again
 
-    //while (xChoice ==true) {
-      // if (finalArray.some(xArray) != true) {
-        // passwordGenerator()
-     // }
-    while (capitalChoice == true) {
-      if (finalArray.Array.some(capitalArray) != true) {
+    
+    if (capitalChoice == true) {
+      if (/[A-Z]/.test(pass)!= true) {
         passwordGenerator();
       }
     }
-    while (lowerChoice == true) {
-      if (finalArray.Array.some(lowerArray) != true) {
+    if (lowerChoice == true) {
+      if (/[a-z]/. test(pass) != true) {
           passwordGenerator();
       }
     }
-    while (specialChoice == true) {
-      if (finalArray.Array.some(specialArray) != true) {
+    if (specialChoice == true) {
+      if (/\W/.test(pass) != true) {
         passwordGenerator();
       }
-     return pass;
+     
     }
-    while (numberChoice == true) {
-      if (finalArray.Array.some(numberArray) != true) {
+    if (numberChoice == true) {
+      if (/[0-9]/.test(pass) != true) {
         passwordGenerator();
       }
-     return pass;
+      
+     
     }
+    return pass;
   }
-  passwordGenerator();
+ return passwordGenerator();
   
-}
+  
+  }
 
 
 
