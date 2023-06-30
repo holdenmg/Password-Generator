@@ -53,7 +53,7 @@ function generatePassword() {
     }
   //check if at least one selection was made. if not, tell to try again
 
-    if((capitalChoice && lowerChoice && specialChoice && numberChoice) === !true){
+    if((capitalChoice || lowerChoice || specialChoice || numberChoice) === !true){
       alert("You must pick at least one character type. Try again.");
       return;
     }
@@ -71,11 +71,12 @@ function generatePassword() {
       finalArray.push(pChar);
     }
     var pass = finalArray.join('');
+    //check if password contains at least one character from each desired category
     return pass;
   }
   passwordGenerator();
   
-  //check if password contains at least one character from each desired category
+
 
 
 
