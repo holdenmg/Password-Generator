@@ -71,17 +71,25 @@ function generatePassword() {
       finalArray.push(pChar);
     }
     var pass = finalArray.join('');
-    //check if password contains at least one character from each desired category
-    return pass;
-  }
+    //check if password contains at least one character from each desired category, if not run passwordGenerator again
+
+    //while (xChoice ==true) {
+      // if (finalArray.some(xArray) != true) {
+        // passwordGenerator()
+     // }
+
+     return pass;
+    }
+    
+  
   passwordGenerator();
   
+  }
 
 
 
 
 
-}
 
 
 
