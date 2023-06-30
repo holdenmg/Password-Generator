@@ -59,19 +59,19 @@ function generatePassword() {
     }
     
     
-  //define new function to create password string from array. This will alow repeating of followeing steps
+  //define new function to create password string from array. This will alow repeating of following steps
   //if password criteria final check is unsat.
   function passwordGenerator() {
-  //splice a randmom selection from password array to final array so password is correct number of characters
+  //pick a randmom selection from password array and push to final array so password is correct number of characters
     const finalArray = [];
      
     while(finalArray.length < +numberCharacters){
       pChar = passArray[Math.floor(Math.random()*passArray.length)];
-      console.log(pChar)
+     
       finalArray.push(pChar);
     }
     var pass = finalArray.join('');
-    console.log(/[A-Z]/.test(pass));
+    
     //check if password contains at least one character from each desired category, if not run passwordGenerator again
     // do this by using regular expressions to check for existence of specific characters in var pass
   
