@@ -70,11 +70,11 @@ function generatePassword() {
       console.log(pChar)
       finalArray.push(pChar);
     }
-    const pass = finalArray.join('');
+    var pass = finalArray.join('');
     console.log(/[A-Z]/.test(pass));
     //check if password contains at least one character from each desired category, if not run passwordGenerator again
-
-    
+    // do this by using regular expressions to check for existence of specific characters in var pass
+  
     if (capitalChoice == true) {
       if (/[A-Z]/.test(pass)!= true) {
         passwordGenerator();
@@ -88,31 +88,17 @@ function generatePassword() {
     if (specialChoice == true) {
       if (/\W/.test(pass) != true) {
         passwordGenerator();
-      }
-     
+      } 
     }
     if (numberChoice == true) {
       if (/[0-9]/.test(pass) != true) {
         passwordGenerator();
-      }
-      
-     
+      } 
     }
     return pass;
   }
  return passwordGenerator();
-  
-  
-  }
-
-
-
-
-
-
-
-
-
+}
 
 // Write password to the #password input
 function writePassword() {
