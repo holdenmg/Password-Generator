@@ -77,14 +77,32 @@ function generatePassword() {
       // if (finalArray.some(xArray) != true) {
         // passwordGenerator()
      // }
-
+    while (capitalChoice == true) {
+      if (finalArray.Array.some(capitalArray) != true) {
+        passwordGenerator();
+      }
+    }
+    while (lowerChoice == true) {
+      if (finalArray.Array.some(lowerArray) != true) {
+          passwordGenerator();
+      }
+    }
+    while (specialChoice == true) {
+      if (finalArray.Array.some(specialArray) != true) {
+        passwordGenerator();
+      }
      return pass;
     }
-    
-  
+    while (numberChoice == true) {
+      if (finalArray.Array.some(numberArray) != true) {
+        passwordGenerator();
+      }
+     return pass;
+    }
+  }
   passwordGenerator();
   
-  }
+}
 
 
 
